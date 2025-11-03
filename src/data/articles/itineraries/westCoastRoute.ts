@@ -1,4 +1,4 @@
-import { BlogArticle } from '../blogTypes';
+import { BlogArticle } from '../../blogTypes';
 
 export const westCoastRouteArticle: BlogArticle = {
   id: 'west-coast-world-cup-route-2026',

@@ -1,12 +1,16 @@
 import { BlogArticle } from './blogTypes';
-import { stadiumDatabaseArticle } from './articles/stadiumDatabase';
-import { matchScheduleArticle } from './articles/matchSchedule';
-import { losAngelesGuideArticle } from './articles/losAngelesGuide';
-import { westCoastRouteArticle } from './articles/westCoastRoute';
-import { newYorkFinalArticle } from './articles/newYorkFinal';
-import { budgetGuideArticle } from './articles/budgetGuide';
-import { ticketSalesPhasesGuide } from './articles/ticketSalesPhasesGuide';
-import { ticketPricingGuide } from './articles/ticketPricingGuide';
+// Reference articles
+import { stadiumDatabaseArticle } from './articles/reference/stadiumDatabase';
+import { matchScheduleArticle } from './articles/reference/matchSchedule';
+// City guide articles
+import { losAngelesGuideArticle } from './articles/city-guides/losAngelesGuide';
+import { newYorkFinalArticle } from './articles/city-guides/newYorkFinal';
+// Planning articles
+import { budgetGuideArticle } from './articles/planning/budgetGuide';
+import { ticketSalesPhasesGuide } from './articles/planning/ticketSalesPhasesGuide';
+import { ticketPricingGuide } from './articles/planning/ticketPricingGuide';
+// Itinerary articles
+import { westCoastRouteArticle } from './articles/itineraries/westCoastRoute';
 
 // Article index - add more articles here as they're created
 export const blogArticles: BlogArticle[] = [

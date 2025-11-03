@@ -9,7 +9,9 @@ export default function SimpleHeader() {
           <Link to="/" className="flex items-center gap-3 group">
             <Trophy className="w-8 h-8 text-fifa-gold-400 transition-transform duration-300 group-hover:scale-110" />
             <div>
-              <h1 className="text-xl font-bold text-white">FIFA 26 Navigator</h1>
+              <h1 className="text-xl font-bold text-white">
+                <span className="gradient-text">GolazoRoute</span>
+              </h1>
               <p className="text-xs text-gray-400">World Cup Travel Optimizer</p>
             </div>
           </Link>

@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build && npm run generate:sitemap",
     "generate:sitemap": "node scripts/generateSitemap.js",
+    "create-article": "tsx scripts/createArticle.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -36,6 +37,7 @@
     "globals": "^16.4.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.16",
+    "tsx": "^4.20.6",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"

@@ -41,7 +41,7 @@ export default function BlogIndex() {
         description: 'Complete guides, itineraries, and planning resources for the FIFA World Cup 2026. Expert tips for traveling to stadiums across USA, Mexico, and Canada.',
         publisher: {
           '@type': 'Organization',
-          name: 'World Cup 2026 Travel Planner',
+          name: 'GolazoRoute',
           logo: {
             '@type': 'ImageObject',
             url: 'https://worldcup2026travel.com/logo.png'
@@ -96,7 +96,7 @@ export default function BlogIndex() {
             "description": "Complete guides, itineraries, and planning resources for the FIFA World Cup 2026",
             "publisher": {
               "@type": "Organization",
-              "name": "World Cup 2026 Planner",
+              "name": "GolazoRoute",
               "logo": {
                 "@type": "ImageObject",
                 "url": "https://worldcup2026planner.com/logo.png"

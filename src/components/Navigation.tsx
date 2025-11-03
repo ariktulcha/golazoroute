@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ViewMode } from '../data/types';
 import { useAppStore } from '../store/appStore';
-import { Map, Trophy, Sparkles, Heart, Calendar, Users, MapPin, DollarSign, Plane, Cloud, FileText, Menu, X, ChevronDown, Home, BookOpen, PartyPopper, Building2 } from 'lucide-react';
+import { Map, Trophy, Sparkles, Heart, Calendar, Users, MapPin, DollarSign, Plane, Cloud, FileText, Menu, X, ChevronDown, BookOpen, PartyPopper, Building2 } from 'lucide-react';
 
 export default function Navigation() {
   const { viewMode, setViewMode } = useAppStore();
@@ -11,7 +11,6 @@ export default function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
   
   // Check if we're on a standalone page (no sidebar needed)
   const isStandalonePage = 
@@ -45,49 +44,44 @@ export default function Navigation() {
 
   const navigationGroups = [
     {
-      title: 'Explore',
-      items: [
-        { id: 'explorer' as ViewMode, label: 'Interactive Map', icon: Map, gradient: 'from-fifa-blue-500 to-fifa-blue-600' },
-      ]
+      title: 'World Cup Map',
+      isSingle: true,
+      id: 'explorer' as ViewMode,
+      icon: Map,
+      gradient: 'from-fifa-blue-500 to-fifa-blue-600'
     },
     {
-      title: 'Planning & Schedule',
+      title: 'Fan Tools',
       items: [
         { id: 'schedule' as ViewMode, label: 'Match Schedule', icon: Calendar, gradient: 'from-green-500 to-emerald-600' },
-        { id: 'follow-team' as ViewMode, label: 'Follow Your Team', icon: Users, gradient: 'from-red-500 to-orange-600' },
         { id: 'road-to-final' as ViewMode, label: 'Road to Final', icon: Trophy, gradient: 'from-fifa-gold-500 to-fifa-gold-600' },
+        { id: 'follow-team' as ViewMode, label: 'Follow Your Team', icon: Users, gradient: 'from-red-500 to-orange-600' },
       ]
     },
     {
-      title: 'Cities & Stadiums',
+      title: 'World Cup Plans',
       items: [
-        { id: 'cities-archive' as ViewMode, label: 'World Cup Cities', icon: MapPin, gradient: 'from-purple-500 to-pink-600' },
-        { id: 'stadiums' as ViewMode, label: 'World Cup Stadiums', icon: Building2, gradient: 'from-blue-500 to-indigo-600' },
-        { id: 'destination-info' as ViewMode, label: 'Trip Destination Info', icon: MapPin, gradient: 'from-amber-500 to-orange-600' },
+        { id: 'recommended-routes' as ViewMode, label: 'Recommended Routes', icon: Sparkles, gradient: 'from-fifa-gold-500 to-orange-600' },
+        { id: 'route-plan' as ViewMode, label: 'Build Route', icon: Plane, gradient: 'from-purple-500 to-fifa-blue-500' },
+        { id: 'budget' as ViewMode, label: 'Budget Builder', icon: DollarSign, gradient: 'from-emerald-500 to-green-600' },
+        { id: 'journey' as ViewMode, label: 'Your Personal Area', icon: Heart, gradient: 'from-fifa-gold-500 to-fifa-gold-600' },
       ]
     },
     {
-      title: 'Trip Planning',
+      title: 'World Cup Cities',
       items: [
-        { id: 'recommended-routes' as ViewMode, label: 'Recommended Routes', icon: Trophy, gradient: 'from-fifa-gold-500 to-orange-600' },
-        { id: 'route-plan' as ViewMode, label: 'Route Plan', icon: Sparkles, gradient: 'from-purple-500 to-fifa-blue-500' },
-        { id: 'journey' as ViewMode, label: 'My Itinerary', icon: Heart, gradient: 'from-fifa-gold-500 to-fifa-gold-600' },
-        { id: 'budget' as ViewMode, label: 'Budget Planner', icon: DollarSign, gradient: 'from-emerald-500 to-green-600' },
+        { id: 'cities-archive' as ViewMode, label: 'Cities', icon: MapPin, gradient: 'from-purple-500 to-pink-600' },
+        { id: 'stadiums' as ViewMode, label: 'Stadiums', icon: Building2, gradient: 'from-blue-500 to-indigo-600' },
+        { id: 'funzone' as ViewMode, label: 'Fan Zones', icon: PartyPopper, gradient: 'from-fifa-gold-500 to-orange-600' },
       ]
     },
     {
-      title: 'Travel Information',
+      title: 'World Cup Info',
       items: [
+        { id: 'destination-info' as ViewMode, label: 'Ticket Info', icon: FileText, gradient: 'from-amber-500 to-orange-600' },
+        { id: 'weather' as ViewMode, label: 'World Cup Weather Forecast', icon: Cloud, gradient: 'from-cyan-500 to-teal-600' },
         { id: 'transportation' as ViewMode, label: 'Transportation Guide', icon: Plane, gradient: 'from-sky-500 to-blue-600' },
-        { id: 'funzone' as ViewMode, label: 'Fan Zone Info', icon: PartyPopper, gradient: 'from-fifa-gold-500 to-orange-600' },
-        { id: 'cities-info' as ViewMode, label: 'Cities Information', icon: Building2, gradient: 'from-purple-500 to-pink-600' },
-        { id: 'weather' as ViewMode, label: 'Weather Forecast', icon: Cloud, gradient: 'from-cyan-500 to-teal-600' },
         { id: 'visa' as ViewMode, label: 'Visa & Travel Docs', icon: FileText, gradient: 'from-indigo-500 to-purple-600' },
-      ]
-    },
-    {
-      title: 'Resources',
-      items: [
         { id: 'blog' as ViewMode, label: 'Travel Blog & Guides', icon: BookOpen, gradient: 'from-fifa-gold-500 to-orange-600' },
       ]
     }
@@ -180,8 +174,8 @@ export default function Navigation() {
               </div>
               <div>
                 <h1 className="text-lg sm:text-3xl font-bold text-white tracking-tight">
-                  <span className="bg-gradient-to-r from-white via-fifa-gold-200 to-white bg-clip-text text-transparent">
-                    FIFA 26 Navigator
+                  <span className="gradient-text">
+                    GolazoRoute
                   </span>
                 </h1>
                 <p className="text-[10px] sm:text-sm text-gray-400 font-medium hidden sm:block">
@@ -213,10 +207,10 @@ export default function Navigation() {
           <div className="absolute inset-0 bg-gradient-to-r from-fifa-blue-900/10 via-transparent to-fifa-gold-900/10 opacity-50"></div>
           
           <div className="relative max-w-7xl mx-auto px-6">
-            <div className="flex items-center justify-between h-16">
+            <div className="flex items-center justify-start gap-8 h-16">
               {/* Logo */}
               <div 
-                className="flex items-center gap-2 group cursor-pointer"
+                className="flex items-center gap-2 group cursor-pointer flex-shrink-0"
                 onClick={() => navigate('/')}
               >
                 <div className="relative">
@@ -224,87 +218,100 @@ export default function Navigation() {
                   <div className="absolute inset-0 blur-xl bg-fifa-gold-500/40 animate-pulse-slow"></div>
                 </div>
                 <h1 className="text-base font-bold text-white tracking-tight">
-                  <span className="bg-gradient-to-r from-white via-fifa-gold-200 to-white bg-clip-text text-transparent">
-                    FIFA 26 Navigator
+                  <span className="gradient-text">
+                    GolazoRoute
                   </span>
                 </h1>
               </div>
 
               {/* Navigation Items with Dropdowns */}
-              <div className="flex items-center gap-1">
-                {!isHomePage && (
-                  <button
-                    onClick={() => navigate('/')}
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all"
-                  >
-                    <Home className="w-4 h-4" />
-                    <span>Home</span>
-                  </button>
-                )}
-                
-                {navigationGroups.map((group) => (
-                  <div 
-                    key={group.title}
-                    className="relative"
-                    onMouseEnter={() => setOpenDropdown(group.title)}
-                    onMouseLeave={() => setOpenDropdown(null)}
-                  >
-                    {/* Group Button */}
-                    <button
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all"
+              <div className="flex items-center gap-1 flex-1">
+                {navigationGroups.map((group) => {
+                  // Handle single items (no dropdown)
+                  if (group.isSingle) {
+                    const Icon = group.icon;
+                    const isActive = activeView === group.id;
+                    return (
+                      <button
+                        key={group.title}
+                        onClick={() => handleTabClick(group.id!)}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                          isActive
+                            ? 'text-white bg-gray-800/50'
+                            : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+                        }`}
+                      >
+                        <Icon className="w-4 h-4" />
+                        <span>{group.title}</span>
+                      </button>
+                    );
+                  }
+                  
+                  // Handle groups with dropdown
+                  return (
+                    <div 
+                      key={group.title}
+                      className="relative"
+                      onMouseEnter={() => setOpenDropdown(group.title)}
+                      onMouseLeave={() => setOpenDropdown(null)}
                     >
-                      <span>{group.title}</span>
-                      <ChevronDown className={`w-3 h-3 transition-transform ${
-                        openDropdown === group.title ? 'rotate-180' : ''
-                      }`} />
-                    </button>
+                      {/* Group Button */}
+                      <button
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800/50 transition-all"
+                      >
+                        <span>{group.title}</span>
+                        <ChevronDown className={`w-3 h-3 transition-transform ${
+                          openDropdown === group.title ? 'rotate-180' : ''
+                        }`} />
+                      </button>
 
-                    {/* Dropdown Menu */}
-                    {openDropdown === group.title && (
-                      <div className="absolute top-full left-0 mt-1 w-56 glass-dark border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden animate-slide-down">
-                        <div className="py-2">
-                          {group.items.map((item) => {
-                            const Icon = item.icon;
-                            const isActive = activeView === item.id;
-                            
-                            return (
-                              <button
-                                key={item.id}
-                                onClick={() => {
-                                  handleTabClick(item.id);
-                                  setOpenDropdown(null);
-                                }}
-                                className={`
-                                  relative w-full flex items-center gap-3 px-4 py-2.5
-                                  text-sm font-medium transition-all duration-300
-                                  group overflow-hidden
-                                  ${
-                                    isActive
-                                      ? 'text-white'
-                                      : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
-                                  }
-                                `}
-                              >
-                                {/* Active background gradient */}
-                                {isActive && (
-                                  <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-100`}></div>
-                                )}
-                                
-                                {/* Icon */}
-                                <Icon className={`w-4 h-4 relative z-10 flex-shrink-0 transition-all duration-300 ${
-                                  isActive ? 'drop-shadow-glow' : 'group-hover:scale-110'
-                                }`} />
-                                
-                                {/* Label */}
-                                <span className="relative z-10">{item.label}</span>
-                              </button>
-                            );
-                          })}
+                      {/* Dropdown Menu */}
+                      {openDropdown === group.title && group.items && (
+                        <div className="absolute top-full left-0 mt-1 w-56 glass-dark border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden animate-slide-down">
+                          <div className="py-2">
+                            {group.items.map((item) => {
+                              const Icon = item.icon;
+                              const isActive = activeView === item.id;
+                              
+                              return (
+                                <button
+                                  key={item.id}
+                                  onClick={() => {
+                                    handleTabClick(item.id);
+                                    setOpenDropdown(null);
+                                  }}
+                                  className={`
+                                    relative w-full flex items-center gap-3 px-4 py-2.5
+                                    text-sm font-medium transition-all duration-300
+                                    group overflow-hidden
+                                    ${
+                                      isActive
+                                        ? 'text-white'
+                                        : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+                                    }
+                                  `}
+                                >
+                                  {/* Active background gradient */}
+                                  {isActive && (
+                                    <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-100`}></div>
+                                  )}
+                                  
+                                  {/* Icon */}
+                                  <Icon className={`w-4 h-4 relative z-10 flex-shrink-0 transition-all duration-300 ${
+                                    isActive ? 'drop-shadow-glow' : 'group-hover:scale-110'
+                                  }`} />
+                                  
+                                  {/* Label */}
+                                  <span className="relative z-10">{item.label}</span>
+                                </button>
+                              );
+                            })}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -346,85 +353,116 @@ export default function Navigation() {
         {/* Menu Items with Groups */}
         <div className="overflow-y-auto h-[calc(100%-73px)] p-3">
           <div className="space-y-6">
-            {/* Home Button in Mobile Menu (only show when not on homepage) */}
-            {!isHomePage && (
-              <button
-                onClick={() => {
-                  navigate('/');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="relative w-full flex items-center justify-between px-4 py-4 rounded-xl font-semibold transition-all duration-300 group overflow-hidden touch-manipulation text-gray-400 hover:text-white hover:bg-gray-800/50 active:bg-gray-800"
-              >
-                <span className="relative z-10 text-left">Home</span>
-                <Home className="w-6 h-6 relative z-10 transition-all duration-300 flex-shrink-0 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-            )}
-            
-            {navigationGroups.map((group) => (
-              <div key={group.title}>
-                {/* Group Header */}
-                <button
-                  onClick={() => toggleGroup(group.title)}
-                  className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider hover:text-gray-300 transition-colors"
-                >
-                  <span>{group.title}</span>
-                  <ChevronDown 
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      collapsedGroups.has(group.title) ? '-rotate-90' : ''
-                    }`}
-                  />
-                </button>
+            {navigationGroups.map((group) => {
+              // Handle single items (no collapsible group)
+              if (group.isSingle) {
+                const Icon = group.icon;
+                const isActive = activeView === group.id;
+                return (
+                  <button
+                    key={group.title}
+                    onClick={() => handleTabClick(group.id!)}
+                    className={`
+                      relative w-full flex items-center justify-between px-4 py-4 rounded-xl
+                      font-semibold transition-all duration-300
+                      group overflow-hidden touch-manipulation
+                      ${
+                        isActive
+                          ? 'text-white shadow-lg'
+                          : 'text-gray-400 hover:text-white hover:bg-gray-800/50 active:bg-gray-800'
+                      }
+                    `}
+                  >
+                    {/* Active background gradient */}
+                    {isActive && (
+                      <>
+                        <div className={`absolute inset-0 bg-gradient-to-r ${group.gradient} opacity-100`}></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                      </>
+                    )}
+                    
+                    {/* Label */}
+                    <span className="relative z-10 text-left">{group.title}</span>
+                    
+                    {/* Icon positioned to the right */}
+                    <Icon className={`w-6 h-6 relative z-10 transition-all duration-300 flex-shrink-0 ${
+                      isActive ? 'drop-shadow-glow' : 'group-hover:scale-110'
+                    }`} />
+                    
+                    {/* Hover glow effect */}
+                    {!isActive && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    )}
+                  </button>
+                );
+              }
+              
+              // Handle groups with collapsible items
+              return (
+                <div key={group.title}>
+                  {/* Group Header */}
+                  <button
+                    onClick={() => toggleGroup(group.title)}
+                    className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider hover:text-gray-300 transition-colors"
+                  >
+                    <span>{group.title}</span>
+                    <ChevronDown 
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        collapsedGroups.has(group.title) ? '-rotate-90' : ''
+                      }`}
+                    />
+                  </button>
 
-                {/* Group Items */}
-                {!collapsedGroups.has(group.title) && (
-                  <div className="space-y-1 mt-1">
-                    {group.items.map((item) => {
-                      const Icon = item.icon;
-                      const isActive = activeView === item.id;
-                      
-                      return (
-                        <button
-                          key={item.id}
-                          onClick={() => handleTabClick(item.id)}
-                          className={`
-                            relative w-full flex items-center justify-between px-4 py-4 rounded-xl
-                            font-semibold transition-all duration-300
-                            group overflow-hidden touch-manipulation
-                            ${
-                              isActive
-                                ? 'text-white shadow-lg'
-                                : 'text-gray-400 hover:text-white hover:bg-gray-800/50 active:bg-gray-800'
-                            }
-                          `}
-                        >
-                          {/* Active background gradient */}
-                          {isActive && (
-                            <>
-                              <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-100`}></div>
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-                            </>
-                          )}
-                          
-                          {/* Label */}
-                          <span className="relative z-10 text-left">{item.label}</span>
-                          
-                          {/* Icon positioned to the right */}
-                          <Icon className={`w-6 h-6 relative z-10 transition-all duration-300 flex-shrink-0 ${
-                            isActive ? 'drop-shadow-glow' : 'group-hover:scale-110'
-                          }`} />
-                          
-                          {/* Hover glow effect */}
-                          {!isActive && (
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            ))}
+                  {/* Group Items */}
+                  {!collapsedGroups.has(group.title) && group.items && (
+                    <div className="space-y-1 mt-1">
+                      {group.items.map((item) => {
+                        const Icon = item.icon;
+                        const isActive = activeView === item.id;
+                        
+                        return (
+                          <button
+                            key={item.id}
+                            onClick={() => handleTabClick(item.id)}
+                            className={`
+                              relative w-full flex items-center justify-between px-4 py-4 rounded-xl
+                              font-semibold transition-all duration-300
+                              group overflow-hidden touch-manipulation
+                              ${
+                                isActive
+                                  ? 'text-white shadow-lg'
+                                  : 'text-gray-400 hover:text-white hover:bg-gray-800/50 active:bg-gray-800'
+                              }
+                            `}
+                          >
+                            {/* Active background gradient */}
+                            {isActive && (
+                              <>
+                                <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-100`}></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                              </>
+                            )}
+                            
+                            {/* Label */}
+                            <span className="relative z-10 text-left">{item.label}</span>
+                            
+                            {/* Icon positioned to the right */}
+                            <Icon className={`w-6 h-6 relative z-10 transition-all duration-300 flex-shrink-0 ${
+                              isActive ? 'drop-shadow-glow' : 'group-hover:scale-110'
+                            }`} />
+                            
+                            {/* Hover glow effect */}
+                            {!isActive && (
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

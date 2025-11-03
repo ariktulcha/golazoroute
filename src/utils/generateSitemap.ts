@@ -1,5 +1,5 @@
 /**
- * Sitemap Generator for FIFA World Cup 2026 Planner
+ * Sitemap Generator for GolazoRoute
  * Run this script to generate sitemap.xml
  */
 

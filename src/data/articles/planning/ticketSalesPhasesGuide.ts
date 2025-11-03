@@ -1,4 +1,4 @@
-import { BlogArticle } from '../blogTypes';
+import { BlogArticle } from '../../blogTypes';
 
 export const ticketSalesPhasesGuide: BlogArticle = {
   id: 'ticket-sales-phases-guide',

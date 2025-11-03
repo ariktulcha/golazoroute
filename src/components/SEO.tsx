@@ -24,7 +24,7 @@ interface SEOProps {
 }
 
 const DEFAULT_IMAGE = 'https://worldcup2026planner.com/og-image.png';
-const SITE_NAME = 'FIFA World Cup 2026 Planner';
+const SITE_NAME = 'GolazoRoute';
 const TWITTER_HANDLE = '@worldcup2026';
 const BASE_URL = 'https://worldcup2026planner.com';
 
@@ -118,14 +118,14 @@ export const SEO: React.FC<SEOProps> = ({
 // Pre-configured SEO components for common pages
 export const HomeSEO = () => (
   <SEO
-    title="FIFA World Cup 2026 Planner"
+    title="GolazoRoute"
     description="Plan your ultimate FIFA World Cup 2026 journey across USA, Mexico, and Canada. Find matches, optimize routes, explore cities, check weather, and create your perfect trip itinerary."
     keywords="World Cup 2026, FIFA World Cup, USA Mexico Canada 2026, World Cup planner, World Cup trip planner, World Cup cities, World Cup stadiums, World Cup tickets, World Cup travel guide"
     canonicalUrl="/"
     structuredData={{
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "FIFA World Cup 2026 Planner",
+      "name": "GolazoRoute",
       "description": "Comprehensive trip planning tool for the FIFA World Cup 2026",
       "applicationCategory": "TravelApplication",
       "operatingSystem": "Web Browser",

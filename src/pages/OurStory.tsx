@@ -78,7 +78,7 @@ export default function OurStory() {
               <div>
                 <h2 className="text-2xl font-bold mb-4">Building a Solution</h2>
                 <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                  That's why I created FIFA 26 Navigator. This platform was built out of pure love for football 
+                  That's why I created GolazoRoute. This platform was built out of pure love for football 
                   and a deep understanding of what fans need. I wanted to take everything I learned from years 
                   of traveling to matches and turn it into a tool that makes World Cup planning effortless.
                 </p>

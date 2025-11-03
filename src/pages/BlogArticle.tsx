@@ -72,7 +72,7 @@ export default function BlogArticle() {
         },
         publisher: {
           '@type': 'Organization',
-          name: 'World Cup 2026 Travel Planner',
+          name: 'GolazoRoute',
           logo: {
             '@type': 'ImageObject',
             url: 'https://worldcup2026travel.com/logo.png'
@@ -127,7 +127,7 @@ export default function BlogArticle() {
   return (
     <>
       <SEO
-        title={`${article.title} | World Cup 2026 Travel Planner`}
+        title={`${article.title} | GolazoRoute`}
         description={article.metaDescription}
         keywords={getBlogKeywords(article)}
         canonicalUrl={`/blog/${article.slug}`}

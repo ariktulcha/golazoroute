@@ -1,4 +1,4 @@
-import { BlogArticle } from '../blogTypes';
+import { BlogArticle } from '../../blogTypes';
 
 export const newYorkFinalArticle: BlogArticle = {
   id: 'new-york-world-cup-final-2026',

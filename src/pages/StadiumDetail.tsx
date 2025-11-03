@@ -137,7 +137,7 @@ export default function StadiumDetail() {
         <meta property="og:description" content={stadium.metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="place" />
-        <meta property="og:site_name" content="World Cup 2026 Travel Planner" />
+        <meta property="og:site_name" content="GolazoRoute" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={stadium.featuredImage} />
         <meta property="og:image:width" content="1200" />

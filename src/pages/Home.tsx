@@ -173,14 +173,14 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="FIFA World Cup 2026 Planner"
-        description="The ultimate FIFA World Cup 2026 trip planner. Explore all 16 host cities across USA, Mexico, and Canada. Optimize your match schedule, check weather forecasts, plan routes, and create your perfect World Cup journey."
+        title="GolazoRoute"
+        description="GolazoRoute - The ultimate FIFA World Cup 2026 trip planner. Explore all 16 host cities across USA, Mexico, and Canada. Optimize your match schedule, check weather forecasts, plan routes, and create your perfect World Cup journey."
         keywords={getHomepageKeywords()}
         canonicalUrl="/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          "name": "FIFA World Cup 2026 Planner",
+          "name": "GolazoRoute",
           "description": "Comprehensive trip planning tool for the FIFA World Cup 2026",
           "applicationCategory": "TravelApplication",
           "operatingSystem": "Web Browser",
@@ -498,7 +498,7 @@ export default function Home() {
         </p>
         <button
           onClick={() => handleFeatureClick('explorer')}
-          className="group w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-fifa-gold-500 to-fifa-gold-600 hover:from-fifa-gold-600 hover:to-fifa-gold-700 text-gray-900 font-black text-base sm:text-lg rounded-xl shadow-glow-gold hover:shadow-glow-gold-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3 mx-auto touch-manipulation"
+          className="group w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-fifa-blue-500 to-fifa-blue-600 hover:from-fifa-blue-600 hover:to-fifa-blue-700 text-white font-black text-base sm:text-lg rounded-xl shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_rgba(59,130,246,0.7)] border-2 border-fifa-blue-400 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3 mx-auto touch-manipulation"
         >
           <Trophy className="w-5 h-5 sm:w-6 sm:h-6" />
           <span>Start Planning Free</span>

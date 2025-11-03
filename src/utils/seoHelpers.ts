@@ -1,5 +1,5 @@
 /**
- * SEO Helper Functions for FIFA World Cup 2026 Planner
+ * SEO Helper Functions for GolazoRoute
  * 
  * This module provides utilities for enhancing SEO across the application.
  */
@@ -127,7 +127,7 @@ export const generateOGMetadata = (params: {
     'og:url': params.url,
     'og:type': params.type || 'website',
     'og:image': params.image || '/og-image.png',
-    'og:site_name': 'FIFA World Cup 2026 Planner',
+    'og:site_name': 'GolazoRoute',
     'twitter:card': 'summary_large_image',
     'twitter:title': params.title,
     'twitter:description': params.description,
@@ -182,11 +182,11 @@ export const generateBlogArticleStructuredData = (article: typeof blogArticles[0
     "description": article.excerpt,
     "author": {
       "@type": "Organization",
-      "name": "World Cup 2026 Planner",
+      "name": "GolazoRoute",
     },
     "publisher": {
       "@type": "Organization",
-      "name": "World Cup 2026 Planner",
+      "name": "GolazoRoute",
       "logo": {
         "@type": "ImageObject",
         "url": `${BASE_URL}/logo.png`,

@@ -71,7 +71,7 @@ export default function CitiesArchive() {
         inLanguage: 'en-US',
         isPartOf: {
           '@type': 'WebSite',
-          name: 'World Cup 2026 Travel Planner',
+          name: 'GolazoRoute',
           url: 'https://worldcup2026travel.com'
         }
       },
@@ -138,7 +138,7 @@ export default function CitiesArchive() {
         <meta property="og:description" content="Discover all 16 FIFA World Cup 2026 host cities. From New York to Mexico City, complete guides for fans." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="World Cup 2026 Travel Planner" />
+        <meta property="og:site_name" content="GolazoRoute" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=1200&h=630&fit=crop" />
         <meta property="og:image:width" content="1200" />

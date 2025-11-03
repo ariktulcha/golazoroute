@@ -39,7 +39,7 @@ export default function StadiumArchive() {
         inLanguage: 'en-US',
         isPartOf: {
           '@type': 'WebSite',
-          name: 'World Cup 2026 Travel Planner',
+          name: 'GolazoRoute',
           url: 'https://worldcup2026travel.com'
         }
       },
@@ -111,7 +111,7 @@ export default function StadiumArchive() {
         <meta property="og:description" content="Explore all 16 FIFA World Cup 2026 stadiums. From MetLife Stadium hosting the Final to Estadio Azteca's historic third World Cup." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="World Cup 2026 Travel Planner" />
+        <meta property="og:site_name" content="GolazoRoute" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1200&h=630&fit=crop" />
         <meta property="og:image:width" content="1200" />

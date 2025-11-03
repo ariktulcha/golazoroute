@@ -1,4 +1,4 @@
-import { BlogArticle } from '../blogTypes';
+import { BlogArticle } from '../../blogTypes';
 
 export const matchScheduleArticle: BlogArticle = {
   id: 'match-schedule-2026',

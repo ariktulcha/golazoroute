@@ -1,4 +1,4 @@
-import { BlogArticle } from '../blogTypes';
+import { BlogArticle } from '../../blogTypes';
 
 export const budgetGuideArticle: BlogArticle = {
   id: 'world-cup-2026-budget-calculator',
