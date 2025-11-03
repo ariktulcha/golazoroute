@@ -1,0 +1,22 @@
+# Robots.txt for FIFA World Cup 2026 Planner
+
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://worldcup2026planner.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important pages
+Allow: /weather
+Allow: /blog
+Allow: /cities
+Allow: /app
+
