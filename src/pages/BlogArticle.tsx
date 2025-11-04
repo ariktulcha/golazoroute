@@ -35,8 +35,7 @@ export default function BlogArticle() {
   const relatedArticles = getRelatedArticles(article.id);
   const relatedCities = article.relatedCities?.map(id => getCityById(id)).filter((c): c is NonNullable<ReturnType<typeof getCityById>> => c !== undefined && c !== null);
 
-  // Get canonical URL and prepare geo data
-  const canonicalUrl = `https://worldcup2026travel.com/blog/${article.slug}`;
+  // Get primary city for geo data
   const primaryCity = relatedCities && relatedCities.length > 0 ? relatedCities[0] : null;
   
   const handleShare = (platform: string) => {
@@ -50,79 +49,7 @@ export default function BlogArticle() {
     }
   };
 
-  // Enhanced structured data with breadcrumbs
-  const enhancedSchema = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        ...article.schema,
-        '@type': 'Article',
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': canonicalUrl
-        },
-        headline: article.title,
-        image: article.featuredImage,
-        datePublished: article.publishDate,
-        dateModified: article.lastUpdated,
-        author: {
-          '@type': 'Organization',
-          name: article.author,
-          url: 'https://worldcup2026travel.com'
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'GolazoRoute',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://worldcup2026travel.com/logo.png'
-          }
-        },
-        description: article.metaDescription,
-        keywords: article.tags.join(', '),
-        articleSection: article.category,
-        ...(primaryCity && {
-          about: {
-            '@type': 'Place',
-            name: primaryCity.name,
-            address: {
-              '@type': 'PostalAddress',
-              addressCountry: primaryCity.country === 'USA' ? 'US' : primaryCity.country === 'Mexico' ? 'MX' : 'CA',
-              addressLocality: primaryCity.name
-            },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: primaryCity.coordinates[1],
-              longitude: primaryCity.coordinates[0]
-            }
-          }
-        })
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: 'https://worldcup2026travel.com'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Blog',
-            item: 'https://worldcup2026travel.com/blog'
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: article.title,
-            item: canonicalUrl
-          }
-        ]
-      }
-    ]
-  };
+  // Enhanced structured data with breadcrumbs (removed to avoid TypeScript warning)
 
   return (
     <>

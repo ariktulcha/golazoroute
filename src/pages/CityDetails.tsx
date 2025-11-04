@@ -2,7 +2,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getCityById } from '../data/cities';
 import { getMatchesByCity } from '../data/matches';
-import { MapPin, Plane, Shield, DollarSign, Train, Users, Clock, AlertCircle, TrendingUp, Star, Cloud, ExternalLink, Calendar, Trophy, Info, ArrowLeft, PartyPopper, ChevronDown, ChevronUp, Utensils, Hotel, Bus, Wifi, CreditCard, Languages, Phone, AlertTriangle } from 'lucide-react';
+import { MapPin, Shield, DollarSign, Train, Users, Clock, AlertCircle, TrendingUp, Star, Cloud, ExternalLink, Calendar, Trophy, Info, ArrowLeft, PartyPopper, ChevronDown, ChevronUp, Utensils, Hotel, Bus, Wifi, CreditCard, Languages, Phone } from 'lucide-react';
 import SEO from '../components/SEO';
 import { generateCityStructuredData, getCityKeywords, generateBreadcrumbData } from '../utils/seoHelpers';
 

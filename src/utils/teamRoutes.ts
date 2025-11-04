@@ -37,7 +37,6 @@ export function getTeamJourneyWithKnockouts(teamName: string): {
   const confirmedMatches = getMatchesForTeam(teamName);
   
   // Find knockout stage matches that this team could potentially play
-  const groupMatches = confirmedMatches.filter(m => m.stage === 'Group');
   const knockoutMatches = matches.filter(m => 
     m.stage !== 'Group' && 
     (m.homeTeam === 'TBD' || m.awayTeam === 'TBD')

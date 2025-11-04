@@ -4,7 +4,7 @@ import { useAppStore } from '../store/appStore';
 import { TrendingUp, MapPin, Calendar, Navigation, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function PopularRoutes() {
-  const { addMatch, clearMatches, selectedMatches } = useAppStore();
+  const { addMatch, clearMatches } = useAppStore();
   const [expandedRoute, setExpandedRoute] = useState<string | null>(null);
   const routes = getPopularRoutes();
 

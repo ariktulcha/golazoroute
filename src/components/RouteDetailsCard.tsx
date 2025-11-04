@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { PopularRoute } from '../utils/popularRoutes';
-import { MapPin, Calendar, Navigation, DollarSign, Clock, ChevronDown, ChevronUp, Zap, Trophy, ArrowRight } from 'lucide-react';
+import { MapPin, Calendar, Navigation, DollarSign, ChevronDown, ChevronUp, Zap, Trophy, ArrowRight } from 'lucide-react';
 import { getCityById } from '../data/cities';
 
 interface RouteDetailsCardProps {

@@ -28,58 +28,7 @@ export default function BlogIndex() {
     { id: 'comparison', label: 'Comparisons', count: blogArticles.filter(a => a.category === 'comparison').length },
   ];
 
-  const canonicalUrl = 'https://worldcup2026travel.com/blog';
-  
-  const blogSchema = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Blog',
-        '@id': canonicalUrl,
-        mainEntityOfPage: canonicalUrl,
-        name: 'World Cup 2026 Travel Blog',
-        description: 'Complete guides, itineraries, and planning resources for the FIFA World Cup 2026. Expert tips for traveling to stadiums across USA, Mexico, and Canada.',
-        publisher: {
-          '@type': 'Organization',
-          name: 'GolazoRoute',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://worldcup2026travel.com/logo.png'
-          }
-        },
-        blogPost: filteredArticles.slice(0, 10).map(article => ({
-          '@type': 'BlogPosting',
-          headline: article.title,
-          description: article.metaDescription,
-          image: article.featuredImage,
-          datePublished: article.publishDate,
-          dateModified: article.lastUpdated,
-          author: {
-            '@type': 'Organization',
-            name: article.author
-          },
-          url: `https://worldcup2026travel.com/blog/${article.slug}`
-        }))
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: 'https://worldcup2026travel.com'
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Blog',
-            item: canonicalUrl
-          }
-        ]
-      }
-    ]
-  };
+  // Blog schema removed to avoid TypeScript warning
 
   return (
     <>

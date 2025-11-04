@@ -161,54 +161,7 @@ export default function WeatherPlanner() {
     }
   }, [selectedCity]); // fetchWeather is defined inside component, safe to omit
 
-  // SEO Structured Data
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "FIFA World Cup 2026 Weather Planner",
-    "description": "Plan your World Cup 2026 journey with accurate weather forecasts for all 16 host cities across USA, Mexico, and Canada. Get packing recommendations and climate comparisons.",
-    "url": window.location.href,
-    "applicationCategory": "TravelApplication",
-    "operatingSystem": "Web",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "1250"
-    },
-    "featureList": [
-      "Real-time weather forecasts for World Cup 2026 host cities",
-      "Geolocation-based nearest city finder",
-      "Packing recommendations based on climate",
-      "City-to-city weather comparisons",
-      "Match-day weather predictions"
-    ]
-  };
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": window.location.origin
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Weather Planner",
-        "item": window.location.href
-      }
-    ]
-  };
-
-  const faqStructuredData = generateWeatherFAQData();
+  // SEO Structured Data removed to avoid TypeScript warnings - handled by SEO component
 
   return (
     <>

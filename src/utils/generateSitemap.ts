@@ -135,13 +135,6 @@ export const generateSitemapXml = (): string => {
   return xml;
 };
 
-// For Node.js execution
-if (typeof window === 'undefined') {
-  import('fs').then(fs => {
-    const sitemap = generateSitemapXml();
-    fs.writeFileSync('public/sitemap.xml', sitemap, 'utf8');
-    console.log('✅ Sitemap generated successfully at public/sitemap.xml');
-    console.log(`📊 Total URLs: ${generateSitemapUrls().length}`);
-  });
-}
+// Note: Sitemap generation is handled by scripts/generateSitemap.js
+// This file is only for client-side sitemap URL generation
 

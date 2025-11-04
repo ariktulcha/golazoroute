@@ -179,7 +179,7 @@ export const generateBlogArticleStructuredData = (article: typeof blogArticles[0
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": article.title,
-    "description": article.excerpt,
+    "description": article.metaDescription,
     "author": {
       "@type": "Organization",
       "name": "GolazoRoute",
@@ -193,12 +193,12 @@ export const generateBlogArticleStructuredData = (article: typeof blogArticles[0
       },
     },
     "datePublished": article.publishDate,
-    "dateModified": article.publishDate,
+    "dateModified": article.lastUpdated || article.publishDate,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `${BASE_URL}/blog/${article.slug}`,
     },
-    "image": article.image ? `${BASE_URL}${article.image}` : `${BASE_URL}/og-image.png`,
+    "image": article.featuredImage ? `${BASE_URL}${article.featuredImage}` : `${BASE_URL}/og-image.png`,
     "keywords": article.tags?.join(', '),
     "articleSection": article.category,
   };
